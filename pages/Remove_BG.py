@@ -2,20 +2,30 @@ import streamlit as st
 from PIL import Image
 from rembg import remove
 
-def remove_bg(image, widget):
-    bytes_data = Image.open(image)
-    output = remove(bytes_data)
-    widget.title('Output Image')
-    widget.image(output)
+class BackgroundRemover:
+    def __init__(self):
+        self.image = None
+        self.col1, self.col2 = st.columns(2)
 
+    def remove_bg(self, image):
+        bytes_data = Image.open(image)
+        output = remove(bytes_data)
+        self.col2.title('Output Image')
+        self.col2.image(output)
 
-st.title("Remove Background from Image")
-image = st.file_uploader("Upload Image", type=["png", "jpg", "jpeg"])
+    def upload_image(self):
+        st.title("Remove Background from Image")
+        image = st.file_uploader("Upload Image", type=["png", "jpg", "jpeg"])
 
-col1, col2 = st.columns(2)
+        if image is not None:
+            self.col1.title('Original Image')
+            self.col1.image(image, width=300)
+            if self.col1.button('Remove Background'):
+                self.remove_bg(image)
 
-if image is not None:
-    col1.title('Original Image')
-    col1.image(image, width=300)
-    col1.button('Remove Background', on_click=remove_bg, args=(image, col2))
-    
+def main():
+    remover = BackgroundRemover()
+    remover.upload_image()
+
+if __name__ == "__main__":
+    main()

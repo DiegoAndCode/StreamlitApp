@@ -1,0 +1,4 @@
+PyPDF2==3.0.1
+openpyxl==3.1.2
+xhtml2pdf==0.2.15
+rembg==2.0.56
