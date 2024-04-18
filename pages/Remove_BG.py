@@ -14,7 +14,8 @@ class BackgroundRemover:
         self.col2.image(output)
 
     def upload_image(self):
-        st.title("Remove Background from Image")
+        st.title("Remove BG")
+        st.subheader("Remove Background from Image")
         image = st.file_uploader("Upload Image", type=["png", "jpg", "jpeg"])
 
         if image is not None:
