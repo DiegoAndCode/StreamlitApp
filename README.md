@@ -1,7 +1,7 @@
 # StreamlitApp
 
 [![Python](https://shields.io/badge/Python-3.12.1-blue.svg)](https://www.python.org/downloads/release/python-3121/)
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://diegoandcode.streamlit.app/)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_white.svg)](https://diegoandcode.streamlit.app/)
 
 Aplicativo web utilizando Streamlit
 
