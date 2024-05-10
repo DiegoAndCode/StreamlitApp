@@ -59,7 +59,7 @@ class main():
             page_icon="🌐",
             layout="wide",
         )
-        st.title("Web Scraping")
+        st.title("Web Scraping online with Selenium")
         st.write("---")
         
         with st.container():
